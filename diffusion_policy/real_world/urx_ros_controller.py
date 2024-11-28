@@ -134,10 +134,10 @@ class ROSURController(mp.Process):
     
     # ========= main loop in process ============
     def run(self):
-        # enable soft real-time
-        if self.soft_real_time:
-            os.sched_setscheduler(
-                0, os.SCHED_RR, os.sched_param(20))
+        # # enable soft real-time
+        # if self.soft_real_time:
+        #     os.sched_setscheduler(
+        #         0, os.SCHED_RR, os.sched_param(20))
 
         # Initialize ROS node
         rospy.init_node('ur_controller', anonymous=True)

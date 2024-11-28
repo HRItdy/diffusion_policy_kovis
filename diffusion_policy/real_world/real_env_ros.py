@@ -40,7 +40,7 @@ class RealEnv:
             # obs
             obs_image_resolution=(640,480),
             max_obs_buffer_size=30,
-            camera_topics=None,
+            camera_namespaces=None,
             obs_key_map=DEFAULT_OBS_KEY_MAP,
             obs_float32=False,
             # action
@@ -128,7 +128,7 @@ class RealEnv:
 
         # Initialize multi-camera system
         self.realsense = ROSMultiRealsense(
-            camera_topics=camera_topics,
+            camera_namespaces=camera_namespaces,
             shm_manager=shm_manager,
             resolution=video_capture_resolution,
             fps=video_capture_fps,

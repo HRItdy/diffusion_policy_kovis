@@ -47,7 +47,7 @@ def main(output, robot_ip, vis_camera_idx, init_joints, frequency, command_laten
             RealEnv(
                 output_dir=output, 
                 robot_ip=robot_ip, 
-                camera_topics=['/camera/color/image_raw'],  # Modify based on your camera setup
+                camera_namespaces=['/camera_0', '/camera_1'],  # /camera0 is the wrist camera, and /camera1 is the side camera.
                 # recording resolution
                 obs_image_resolution=(640,480),
                 frequency=frequency,
