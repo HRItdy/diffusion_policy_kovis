@@ -19,3 +19,5 @@ At first the problem many dependencies are gone. When I tried to install them ag
 Then the apt install is good, but apt install realsense2-camera still failed because of unsolvable issue, I used sudo aptitude install .... and deny the first plan, used the second to downgrade some dependencies.
 
 After these, the launch file said no `ur_robot_driver`, so accroding to the ur_robot architecture, this node actually should be one executable node in devel. Because I ran `catkin clean` before so all these are deleted. 
+
+I rerun the catkin_make, cannot find `robotiq_2f_85_description`. Then I changed to `catkin build` and there are some dependencies with wrong versions. I used `pip3 install` to correct them. After that, all good!
