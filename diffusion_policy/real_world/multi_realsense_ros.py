@@ -9,7 +9,7 @@ from diffusion_policy.real_world.video_recorder import VideoRecorder
 
 class ROSMultiRealsense:
     def __init__(self,
-        camera_namespaces: Optional[List[str]]=None,
+        topics: Optional[List[str]]=None,
         shm_manager: Optional[SharedMemoryManager]=None,
         resolution=(640,480),
         capture_fps=30,
@@ -23,15 +23,15 @@ class ROSMultiRealsense:
         verbose=False
         ):
         """
-        camera_namespaces: List of ROS camera namespaces (e.g., ['camera1', 'camera2'])
+        topics: List of ROS camera topics (e.g., ['/realsense_wrist/color/image_raw', '/usb_cam/image_raw'])
                          If None, will use default '/camera'
         """
         if shm_manager is None:
             shm_manager = SharedMemoryManager()
             shm_manager.start()
-        if camera_namespaces is None:
-            camera_namespaces = ['/camera']
-        n_cameras = len(camera_namespaces)
+        if topics is None:
+            topics = ['/camera']
+        n_cameras = len(topics)
         
         transform = repeat_to_list(
             transform, n_cameras, Callable)
@@ -41,7 +41,7 @@ class ROSMultiRealsense:
             recording_transform, n_cameras, Callable)
 
         cameras = dict()
-        for i, namespace in enumerate(camera_namespaces):
+        for i, namespace in enumerate(topics):
             cameras[namespace] = ROSRealsense(
                 namespace=namespace,
                 shm_manager=shm_manager,

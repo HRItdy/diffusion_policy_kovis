@@ -28,7 +28,7 @@ class ROSRealsense:
 
     def __init__(
             self, 
-            namespace: str,
+            topic: str,
             shm_manager: SharedMemoryManager,
             resolution=(648,480),
             capture_fps=30,
@@ -50,7 +50,7 @@ class ROSRealsense:
 
         # Initialize ROS node if not already initialized
         if not rospy.get_node_uri():
-            rospy.init_node(f'ros_realsense_{namespace}', anonymous=True)
+            rospy.init_node(f'ros_realsense_{topic}', anonymous=True)
             
         self.bridge = CvBridge()
         
@@ -123,7 +123,7 @@ class ROSRealsense:
 
         # Initialize subscriber
         self.image_sub = rospy.Subscriber(
-            f"{namespace}/color/image_raw",
+            f"{topic}",
             Image,
             self.image_callback,
             queue_size=1
