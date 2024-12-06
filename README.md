@@ -33,3 +33,7 @@ Traceback (most recent call last):
     rtde_c = RTDEControlInterface(hostname=robot_ip)
 RuntimeError: One of the RTDE input registers are already in use! Currently you must disable the EtherNet/IP adapter, PROFINET or any MODBUS unit configured on the robot. This might change in the future.
 ```
+
+SSH to UR5:
+`ssh root@<robot_ip>`
+Replace `<robot_ip>` with robot ip address.
