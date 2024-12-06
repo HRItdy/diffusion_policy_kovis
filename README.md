@@ -37,3 +37,16 @@ RuntimeError: One of the RTDE input registers are already in use! Currently you 
 SSH to UR5:
 `ssh root@<robot_ip>`
 Replace `<robot_ip>` with robot ip address.
+
+`netstat --all --program | grep 30004` find all process binding to port 30004. It should show like this:
+```
+0 *:30004                 *:*                     LISTEN      3223/URControl  
+tcp        0      0 localhost:30004         localhost:51810         ESTABLISHED 3223/URControl  
+tcp        0      0 localhost:30004         localhost:51839         ESTABLISHED 3223/URControl  
+tcp        0     52 localhost:51839         localhost:30004         ESTABLISHED 3055/driverSensorUR
+tcp6       0      0 localhost:51810         localhost:30004         ESTABLISHED 2600/java       
+```
+where 2600 is the GUI, stop it will trigger the restart of UR robot. And `URControl` is the UR controller. 
+
+Run `kill 3055` kill `driverSensorUR`, and immidiately run `demo_real_robot.py`. Then it should work.
+
