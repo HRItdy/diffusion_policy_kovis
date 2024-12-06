@@ -50,3 +50,9 @@ where 2600 is the GUI, stop it will trigger the restart of UR robot. And `URCont
 
 Run `kill 3055` kill `driverSensorUR`, and immidiately run `demo_real_robot.py`. Then it should work.
 
+## TODO
+1. Write the config file, train the diffusion policy.
+2. Write the dataset conversion file to convert the current dataset into rlde dataset.
+3. Use the minitrain colab file in open_x_embodiment repo to fine tune the RT1-X model.
+4. Read the STPPO papers. Has been added to BiliBili and xiaohongshu shoucangjia.
+
