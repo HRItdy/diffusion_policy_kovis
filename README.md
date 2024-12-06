@@ -21,3 +21,15 @@ Then the apt install is good, but apt install realsense2-camera still failed bec
 After these, the launch file said no `ur_robot_driver`, so accroding to the ur_robot architecture, this node actually should be one executable node in devel. Because I ran `catkin clean` before so all these are deleted. 
 
 I rerun the catkin_make, cannot find `robotiq_2f_85_description`. Then I changed to `catkin build` and there are some dependencies with wrong versions. I used `pip3 install` to correct them. After that, all good!
+
+If encounter this issue:
+
+```
+Process RTDEPositionalController:
+Traceback (most recent call last):
+  File "/home/tiandy/miniforge3/envs/robodiff/lib/python3.9/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/home/tiandy/diffusion_robotics_code/imitation_learning/diffusion_policy/diffusion_policy/real_world/rtde_interpolation_controller.py", line 236, in run
+    rtde_c = RTDEControlInterface(hostname=robot_ip)
+RuntimeError: One of the RTDE input registers are already in use! Currently you must disable the EtherNet/IP adapter, PROFINET or any MODBUS unit configured on the robot. This might change in the future.
+```
