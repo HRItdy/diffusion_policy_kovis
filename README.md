@@ -73,4 +73,29 @@ AttributeError: module 'jaxlib.xla_client' has no attribute 'generate_pjrt_gpu_p
 It's problem of jax. Try this:
 `pip install --upgrade "jax[cuda12_pip]"==0.4.22 -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html`
 
+If encounter
+
+```
+ImportError: 
+Attempted to load a reverb dynamic library, but it could not find the required
+symbols inside of TensorFlow.  This commonly occurs when your version of
+tensorflow and reverb are mismatched.  For example, if you are using the python
+package 'tf-nightly', make sure you use the python package 'dm-reverb-nightly'
+built on the same or the next night.  If you are using a release version package
+'tensorflow', use a release package 'dm-reverb' built to be compatible with
+that exact version.  If all else fails, file a github issue on deepmind/reverb.
+Current installed version of tensorflow: 2.15.0.
+
+Orignal error:
+/home/daiying/mambaforge/envs/VLA_finetuning/lib/python3.9/site-packages/reverb/libschema_cc_proto.so: undefined symbol: _ZN6google8protobuf8internal17AssignDescriptorsEPFPKNS1_15DescriptorTableEvEPSt9once_flagRKNS0_8MetadataE
+```
+
+The problem of mismatch of tensorflow and deverb. Refer to this website for the matching version: https://pypi.org/project/dm-reverb/
+
+like this:
+
+![image](https://github.com/user-attachments/assets/c4b987a4-962e-402e-bd13-481803c0cc53)
+
+
+
 
