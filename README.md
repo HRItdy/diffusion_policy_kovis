@@ -58,3 +58,19 @@ Run `kill 3055` kill `driverSensorUR`, and immidiately run `demo_real_robot.py`.
 3. Use the minitrain colab file in open_x_embodiment repo to fine tune the RT1-X model.
 4. Read the STPPO papers. Has been added to BiliBili and xiaohongshu shoucangjia.
 
+If encounter 
+
+```
+Jax plugin configuration error: Exception when calling jax_plugins.xla_cuda12.initialize()
+Traceback (most recent call last):
+  File "/home/daiying/mambaforge/envs/VLA_finetuning/lib/python3.9/site-packages/jax/_src/xla_bridge.py", line 438, in discover_pjrt_plugins
+    plugin_module.initialize()
+  File "/home/daiying/mambaforge/envs/VLA_finetuning/lib/python3.9/site-packages/jax_plugins/xla_cuda12/__init__.py", line 78, in initialize
+    options = xla_client.generate_pjrt_gpu_plugin_options()
+AttributeError: module 'jaxlib.xla_client' has no attribute 'generate_pjrt_gpu_plugin_options'
+```
+
+It's problem of jax. Try this:
+`pip install --upgrade "jax[cuda12_pip]"==0.4.22 -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html`
+
+
