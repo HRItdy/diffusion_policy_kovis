@@ -13,6 +13,10 @@
 - Write the RT1X finetuning code
 - Write the training config file for the diffusion policy code
 
+- Finetune openVLA using the default open_x_embodiment dataset
+- Train the diffusion policy with our own dataset
+
+
 ## Record an issue (may transfer to a readme.rd in subfolder later)
 I want to deploy the diffusion policy code in ubuntu20.04 with ROS1. But the ffmpeg is too stale so I install it. I guess in this step it destroyed the dependencies of ROS system.
 
