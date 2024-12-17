@@ -18,7 +18,8 @@
 
 - Convert own dataset to tfds format using this: https://github.com/kpertsch/rlds_dataset_builder. Note that in this repo there is also instructions to contribute own dataset to google.
 - Finetune the converted dataset to finetune openVLA
-- 
+- Use the raw dataset to train the diffusion model.
+
 
 
 ## Record an issue (may transfer to a readme.rd in subfolder later)
