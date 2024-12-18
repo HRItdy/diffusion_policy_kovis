@@ -13,7 +13,7 @@
 - Write the RT1X finetuning code
 - Write the training config file for the diffusion policy code
 
-- Finetune openVLA using the default open_x_embodiment dataset
+- ~~Finetune openVLA using the default open_x_embodiment dataset~~
 - Train the diffusion policy with our own dataset
 
 - Convert own dataset to tfds format using this: https://github.com/kpertsch/rlds_dataset_builder. Note that in this repo there is also instructions to contribute own dataset to google.
