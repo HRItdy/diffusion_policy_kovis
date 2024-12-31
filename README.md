@@ -21,6 +21,7 @@
 - Use the raw dataset to train the diffusion model.
 - Train the ACT model.
 
+- Check `real_data_to_replay_buffer` function in `real_data_conversion.py`. You can find the code to convert the dataset collected using `demo_pusht.py` to the standard format.
 
 
 ## Record an issue (may transfer to a readme.rd in subfolder later)
