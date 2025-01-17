@@ -112,3 +112,8 @@ ip of Xiuchao's desktop: `172.20.117.176`
 
 ## RDT
 cutlass: https://blog.csdn.net/gitblog_00440/article/details/142837443?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-1-142837443-blog-123019605.235%5Ev43%5Epc_blog_bottom_relevance_base2&spm=1001.2101.3001.4242.2&utm_relevant_index=4
+
+## Steps to produce dataset
+First use diffusion policy can generate the dataset with video. In real_data_convertion and data_conversion, we defined the code to convert the zarr dataset into hdf5 format.
+
+Use the rlds_dataset_builder code, can find compile the hdf5 dataset into tfds. Remember to copy readme.md and some other files into the dataset path. 'CITATIONS.bib', '\__init\__.py' and 'README.md'. Please refer to the dataset dictionary and github repo.
