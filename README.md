@@ -116,7 +116,7 @@ cutlass: https://blog.csdn.net/gitblog_00440/article/details/142837443?utm_mediu
 
 NCCL报错 Bootstrap : no socket interface found 解决
 
-Find the name of your network card (the one with ip). Like eth1, enp0s1.
+Find the name of your network card (the one with ip). Like eth1, enp0s1. https://blog.csdn.net/qq874455953/article/details/136846355
 
 ## Steps to produce dataset
 First use diffusion policy can generate the dataset with video. In real_data_convertion and data_conversion, we defined the code to convert the zarr dataset into hdf5 format.
